@@ -50,7 +50,7 @@ const Product = () => {
         </div>
       ))}
       </div>
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center mt-5 mb-5">
         {
           Array.from({length:Math.ceil(products.length / productsPerPage)}, (_,i)=>(
             <button key={i} onClick={()=> paginate(i+1)} className={`px-4  py-2 mx-1 ${currentPage === i + 1 ? "bg-black text-white":"bg-white border"} `}>
