@@ -8,7 +8,7 @@ const Shop = () => {
     <>
       <div className="">
         <Container>
-          <Flex className={"flex-wrap gap-x-20 justify-center"}>
+          <Flex className={"flex-wrap gap-x-20 justify-center mt-10"}>
             <Product />
           </Flex>
         </Container>
