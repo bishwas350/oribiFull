@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
-
+@plugin "daisyui" {
+  themes: light --default;
+}
 @theme {
-  --color-menuColor: #767676; 
-  --color-menuHcolor: #262626; 
-  --color-categoryBg: #F5F5F3; 
-  --color-borderColor: #F0F0F0; 
-  --color-productH: #F5F5F5; 
-  --background-image-bannerBg: url("assets/bannerBg.png"); 
+  --color-menuColor: #767676;
+  --color-menuHcolor: #262626;
+  --color-categoryBg: #f5f5f3;
+  --color-borderColor: #f0f0f0;
+  --color-productH: #f5f5f5;
+  --color-Footerclr: #F5F5F3;
+  --color-fColor: #6D6D6D;
+  --background-image-bannerBg: url("assets/bannerBg.png");
+  --font-doom: "DM Sans", serif;
 }

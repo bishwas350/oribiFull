@@ -7,7 +7,7 @@ const ProductsPart = () => {
   return (
    <div className="py-6">
         <Container>
-            <Flex className={"justify-between flex-wrap gap-y-3"}>
+            <Flex className={"justify-center flex-wrap gap-20"}>
                 <Product/>
             </Flex>
         </Container>

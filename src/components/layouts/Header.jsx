@@ -9,6 +9,7 @@ import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import Heading from "../Heading";
 import Search from "../Search";
 import SearchResults from "../SearchResults";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [data, setData] = useState([]);
@@ -22,12 +23,16 @@ const Header = () => {
             </div>
             <div className="w-[60%]">
               <Menu className={"text-sm text-menuColor"}>
-                <li className=" hover:text-menuHcolor hover:font-bold duration-300">
+               <Link to={"/"}>
+               <li className=" hover:text-menuHcolor hover:font-bold duration-300">
                   Home
                 </li>
-                <li className=" hover:text-menuHcolor hover:font-bold duration-300">
+               </Link>
+               <Link to={"/Shop"}>
+               <li className=" hover:text-menuHcolor hover:font-bold duration-300">
                   Shop
                 </li>
+               </Link>
                 <li className=" hover:text-menuHcolor hover:font-bold duration-300">
                   About
                 </li>

@@ -6,7 +6,8 @@ import { FaCodeCompare } from "react-icons/fa6";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 6;
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
@@ -16,9 +17,15 @@ const Product = () => {
     fetchProduct();
   }, []);
 
+  const indexLastProduct = currentPage * productsPerPage;
+  const indexFirstProduct = indexLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexFirstProduct, indexLastProduct);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <>
-      {products.map((product) => (
+      <div className="flex flex-wrap gap-5 justify-center">
+      {currentProducts.map((product) => (
         <div key={product.id} className="w-[24%] relative group">
           <img src={product.image} alt={product.title} />
           <Badge badgeText={"New"} className={"absolute top-5 left-5"} />
@@ -42,6 +49,16 @@ const Product = () => {
           </div>
         </div>
       ))}
+      </div>
+      <div className="flex justify-center mt-5">
+        {
+          Array.from({length:Math.ceil(products.length / productsPerPage)}, (_,i)=>(
+            <button key={i} onClick={()=> paginate(i+1)} className={`px-4  py-2 mx-1 ${currentPage === i + 1 ? "bg-black text-white":"bg-white border"} `}>
+              {i+1}
+            </button>
+          ))
+        }
+      </div>
     </>
   );
 };
